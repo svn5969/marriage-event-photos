@@ -1,5 +1,5 @@
 import down from '../../../images/social/Dtafalonso-Android-Lollipop-Downloads.png';
-import React, { useState } from 'react';
+import React from 'react';
 import './ProjectCard.css';
 import Carousel from 'react-bootstrap/Carousel';
 // import Aos from "aos";
@@ -33,7 +33,7 @@ const ProjectCard = ({ projects: { name, image, description, download, price } }
                 <p>{description}</p>
                 <div className="mx-auto">
                     <div className="mb-3 linkIcon">
-                        <a className="mr-2 ms-5 font-weight-bold btn btn-outline-danger btn-sm" >{price}</a>
+                        <span className="mr-2 ms-5 font-weight-bold btn btn-outline-danger btn-sm" >{price}</span>
                         {/* <a className="mr-2 ms-5 font-weight-bold btn btn-outline-info btn-sm" target="_blank" rel="noreferrer"><img className="mr-2 me-1" src={down} alt="" />Download</a> */}
                         <button className="btn btn-sm btn-outline-warning font-weight-bold ms-5"><img className="mr-2 me-1" src={down} alt=""/>Download</button>
                     </div>
