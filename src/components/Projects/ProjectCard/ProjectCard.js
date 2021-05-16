@@ -9,7 +9,7 @@ const ProjectCard = ({ projects: { name, image, description, download, price } }
     // useEffect(() => {
     //     Aos.init({ duration: 1000 });
     // }, [])
-    const [details, setDetails]  = useState(false)
+    // const [details, setDetails]  = useState(false)
     console.log(description);
     return (
         <div className="col-md-6 card-area" data-aos="zoom-in">
@@ -34,8 +34,8 @@ const ProjectCard = ({ projects: { name, image, description, download, price } }
                 <div className="mx-auto">
                     <div className="mb-3 linkIcon">
                         <a className="mr-2 ms-5 font-weight-bold btn btn-outline-danger btn-sm" >{price}</a>
-                        <a className="mr-2 ms-5 font-weight-bold btn btn-outline-info btn-sm" href={down} target="_blank" rel="noreferrer"><img className="mr-2 me-1" src={down} alt="" />Download</a>
-                        {/* <button onClick={()=> setDetails(!details)} className="btn btn-sm btn-outline-warning font-weight-bold"><img className="mr-2" src={detailsPic} alt=""/>Details</button> */}
+                        {/* <a className="mr-2 ms-5 font-weight-bold btn btn-outline-info btn-sm" target="_blank" rel="noreferrer"><img className="mr-2 me-1" src={down} alt="" />Download</a> */}
+                        <button className="btn btn-sm btn-outline-warning font-weight-bold ms-5"><img className="mr-2 me-1" src={down} alt=""/>Download</button>
                     </div>
                 </div>
                 {/* {

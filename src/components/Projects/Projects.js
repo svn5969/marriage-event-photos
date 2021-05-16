@@ -6,6 +6,7 @@ import './Projects.css';
 const Projects = () => {
     const [projects, setProjects] = useState(ProjectData)
     console.log(projects);
+    console.log(setProjects);
 
     // const handleFilterCategory = (CategoryName) => {
     //     const new_array = ProjectData.filter(project => project.category.includes(CategoryName))
