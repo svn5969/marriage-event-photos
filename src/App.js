@@ -1,23 +1,72 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
-
+// import RiseLoader from "react-spinners/RiseLoader";
+// import PropagateLoader from "react-spinners/PropagateLoader";
+// import PacmanLoader from 'react-spinners/PacmanLoader';
+import RingLoader from 'react-spinners/RingLoader';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import Home from './components/home/Home';
 function App() {
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false)
+    }, 8000);
+  }, [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {
+        loading ?
+          <div className="loading">
+            {/* <RiseLoader
+
+            className="App"
+            size={15}
+            color={"#800080"}
+            loading={loading}
+
+          /> */}
+            {/* <PacmanLoader
+          className="App"
+		size='60'
+	color='#6b5ce7'
+
+	/> */}
+            <RingLoader
+              size='100'
+              color='#0000ff'
+              loading={loading}
+            />
+            <div className="my-4">
+              <h5 className="font-weight-bold text-uppercase " style={{ color: "red", paddingTop: '140px', paddingLeft: '130px' }}>প্রজাপতি ওয়েডিং এন্ড ইভেন্ট</h5>
+            </div>
+            {/* <PropagateLoader
+            className="App"
+            size={15}
+            color={"#800080"}
+            loading={loading}
+
+          /> */}
+
+
+
+          </div>
+
+          :
+          <Router>
+            <Switch>
+              <Route exact path="/">
+                <Home></Home>
+              </Route>
+            </Switch>
+          </Router>
+      }
     </div>
   );
 }
